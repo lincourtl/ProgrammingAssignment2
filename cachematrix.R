@@ -32,7 +32,8 @@ cacheSolve <- function(x, ...) {
 ## @x: output of makeCacheMatrix()
 # return: inverse of cached matrix        	
 	# If inv is null then calculate inverse and cache it
-	if (is.null(inv = x$getinv())) {
+  inv = x$getinv()
+	if (is.null(inv)) {
 		mat.data = x$get()
 		inv = solve(mat.data, ...)
 		x$setinv(inv)
